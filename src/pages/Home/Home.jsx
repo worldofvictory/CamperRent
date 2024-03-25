@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
-//import { ReactComponent as CarIcon } from '../../images/icons/car_rent.svg';
-//import { ReactComponent as SupportIcon } from '../../images/icons/headset.svg';
-//import { ReactComponent as PriceIcon } from '../../images/icons/price.svg';
-//import { ReactComponent as InsuranceIcon } from '../../images/icons/insurance.svg'
+//import { Helmet, HelmetProvider } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import {  Button, Container, Description, ReasonSection, ReasonsItem, ReasonsList, ReasonsTitle, SectionHero, Title } from "./Home.styled";
 
 const Home = () => {
@@ -15,9 +12,13 @@ const Home = () => {
 
     return (
         <main>
+            <HelmetProvider>
             <Helmet>
-                <title>Home</title>
-            </Helmet>
+                
+                    <title>Home</title>
+                       </Helmet>
+                    </HelmetProvider>
+         
             <SectionHero>
                 <Title>Where does your freedom start?</Title>
                 <Description>Travel across Ukraine in a mobile home. You can stop at any moment and in any place. Feel the freedom of choice in your life. Your comfort and safety are our priority. Just choose camper in catalog and enjoy your travel.  </Description>
